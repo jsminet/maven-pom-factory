@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
+  <!-- Jar final name is build from artifactId -->
   <artifactId>camel-jsonpath-alldep</artifactId>
   <version>2.13.4-SNAPSHOT</version>
 
@@ -44,6 +45,14 @@
               <goal>shade</goal>
             </goals>
             <configuration>
+              <!-- A relocation example - to avoid class conflict
+              <relocations>
+                <relocation>
+                 <pattern>org.apache.commons.configuration</pattern>
+                 <shadedPattern>lu.easybi.commons.configuration</shadedPattern>
+                </relocation>
+               </relocations>
+              -->
               <artifactSet>
                 <excludes>
                   <exclude>lu.easybi:*</exclude>
@@ -52,15 +61,14 @@
                   <exclude>log4j:log4j:jar:</exclude>
                 </excludes>
               </artifactSet>
-
               <filters>
                 <filter>
-                 <artifact>*:*</artifact>
-                    <excludes>
-                      <exclude>META-INF/*.SF</exclude>
-                      <exclude>META-INF/*.DSA</exclude>
-                      <exclude>META-INF/*.RSA</exclude>
-                    </excludes>
+                  <artifact>*:*</artifact>
+                  <excludes>
+                    <exclude>META-INF/*.SF</exclude>
+                    <exclude>META-INF/*.DSA</exclude>
+                    <exclude>META-INF/*.RSA</exclude>
+                  </excludes>
                 </filter>
               </filters>
             </configuration>
