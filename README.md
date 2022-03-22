@@ -1,16 +1,16 @@
 # The idea
 
-Maven project for pom.xml samples including best practices and tips and tricks
+Maven master project for **pom.xml** samples including best practices and tips and tricks
 
 # Introduction
 
-This repo contains a *super pom* as a master example project with multiple sub modules
+This repo contains a *super pom* as a master example project with multiple sub modules, each of these modules have a particular behaviour based on a need.
 
 ## Best practices
 
-- The *<dependencyManagement>* tag allows to centralize dependencies in all sub modules, version tag in dependencies modules become useless
+- The < dependencyManagement > tag allows to centralize dependencies in all sub modules, version tag in dependencies modules become useless
 - You should hard code the plugin version to get an immutable compilation
-- Use the *<properties>* tag for version declaration and sort it by type
+- Use the < properties > tag for version declaration and sort it by type
 
 # Modules
 
@@ -30,7 +30,7 @@ This pom can generate pojo classes in a compiled jar from a given xsd, place the
 ```mvn package``` 
 
 ## shade
-This pom can create a shaded jar that include all the dependencies from *<dependencies>* tag. 
+This pom can create a shaded jar that include all the dependencies from < dependencies > tag. 
 Very useful for a Talend project that use a *tLibrary* load component.
 
 ```mvn package``` 
