@@ -39,6 +39,7 @@
     <module>wrapper</module>
     <module>xsd2jar</module>
     <module>shade</module>
+    <module>pmd</module>
   </modules>
 
 <dependencyManagement>

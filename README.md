@@ -35,6 +35,11 @@ Very useful for a Talend project that use a *tLibrary* load component.
 
 ```mvn package``` 
 
+## pmd
+This pom can create a pmd report (html, xml, ...) and check programming common pitfall
+
+```mvn pmd:pmd``` 
+
 # Tip and tricks
 
 ## Configuration scope
